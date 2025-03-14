@@ -1,6 +1,7 @@
 import { ClerkLoaded, ClerkProvider } from "@clerk/clerk-expo";
 import { DarkTheme, ThemeProvider } from "@react-navigation/native";
 import { Slot } from "expo-router";
+import { tokenCache } from "@/utils/cache";
 
 export default function RootLayout() {
   const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
@@ -10,7 +11,7 @@ export default function RootLayout() {
   }
 
   return (
-    <ClerkProvider publishableKey={publishableKey}>
+    <ClerkProvider publishableKey={publishableKey} tokenCache={tokenCache}>
       <ClerkLoaded>
         <ThemeProvider value={DarkTheme}>
           <Slot />

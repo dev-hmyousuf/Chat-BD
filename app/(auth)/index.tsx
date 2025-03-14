@@ -12,7 +12,7 @@ WebBrowser.maybeCompleteAuthSession();
 
 export default function Index() {
   const { startSSOFlow } = useSSO();
-  const { user } = useUser();
+  const { user, isSignedIn } = useUser();
   const [errors, setErrors] = React.useState<ClerkAPIError[]>([]);
 
   const handleSignInWithGoogle = React.useCallback(async () => {
