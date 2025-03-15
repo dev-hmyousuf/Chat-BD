@@ -1,11 +1,46 @@
-import { FlatList, View } from "react-native";
+import { Button, FlatList, View } from "react-native";
 import { Text } from "@/components/Text";
 import { Link, useRouter } from "expo-router";
-import { chatRooms } from "@/utils/test-data";
+import { ChatRoom } from "@/utils/test-data";
 import { IconSymbol } from "@/components/IconSymbol";
+import { database, appwriteConfig } from "@/utils/appwrite";
+import { useState, useEffect } from "react";
 
 export default function Index() {
   const router = useRouter();
+
+  const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
+
+  useEffect(() => {
+    fetchChatRooms();
+  }, []);
+
+  const fetchChatRooms = async () => {
+    try {
+      const { documents, total } = await database.listDocuments(
+        appwriteConfig.db,
+        appwriteConfig.col.chatRooms
+      );
+
+      console.log("total", total);
+
+      console.log("docs", JSON.stringify(documents, null, 2));
+
+      // Map the Document objects to ChatRoom objects
+      const rooms = documents.map((doc) => ({
+        id: doc.$id,
+        title: doc.title,
+        description: doc.description,
+        isPrivate: doc.isPrivate,
+        createdAt: new Date(doc.createdAt),
+        updatedAt: new Date(doc.updatedAt),
+      }));
+
+      setChatRooms(rooms);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
     <FlatList
@@ -39,6 +74,13 @@ export default function Index() {
               <IconSymbol name="chevron.right" size={20} color="#666666" />
             </View>
           </Link>
+        );
+      }}
+      ListHeaderComponent={() => {
+        return (
+          <View style={{ padding: 16, gap: 16 }}>
+            <Button title="Fetch Chat Rooms" onPress={fetchChatRooms} />
+          </View>
         );
       }}
       contentInsetAdjustmentBehavior="automatic"
