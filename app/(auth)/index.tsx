@@ -1,11 +1,12 @@
 import * as React from "react";
-import { View, Button } from "react-native";
+import { View, Image, SafeAreaView } from "react-native";
 
 import * as WebBrowser from "expo-web-browser";
 import * as AuthSession from "expo-auth-session";
 import { isClerkAPIResponseError, useSSO, useUser } from "@clerk/clerk-expo";
 import { ClerkAPIError } from "@clerk/types";
 import { Text } from "@/components/Text";
+import { Button } from "@/components/Button";
 
 // Handle any pending authentication sessions
 WebBrowser.maybeCompleteAuthSession();
@@ -43,19 +44,54 @@ export default function Index() {
   }, []);
 
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Auth</Text>
-      {user && <Text>{user.emailAddresses[0].emailAddress}</Text>}
-      <Button title="Sign in" onPress={handleSignInWithGoogle} />
-      {errors.map((error) => (
-        <Text key={error.code}>{error.code}</Text>
-      ))}
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      {/* spacer */}
+      <View style={{ flex: 0.1 }} />
+
+      <View
+        style={{
+          flex: 1,
+          justifyContent: "center",
+          alignItems: "center",
+          padding: 16,
+        }}
+      >
+        <View style={{ gap: 20, alignItems: "center" }}>
+          <Image
+            source={require("@/assets/images/logo.png")}
+            style={{ width: 100, height: 100 }}
+          />
+          <Text style={{ fontSize: 32, fontWeight: "bold" }}>
+            Modern Chat App
+          </Text>
+          <Text>Sign in to continue</Text>
+          {errors.map((error) => (
+            <Text key={error.code}>{error.code}</Text>
+          ))}
+        </View>
+
+        {/* spacer */}
+        <View style={{ flex: 1 }} />
+
+        <Button
+          onPress={handleSignInWithGoogle}
+          style={{
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 10,
+            marginBottom: 30,
+          }}
+        >
+          <Image
+            source={require("@/assets/images/google-icon.png")}
+            style={{ width: 20, height: 20 }}
+          />
+          <Text style={{ color: "black", fontWeight: "500" }}>
+            Sign in with Google
+          </Text>
+        </Button>
+      </View>
+    </SafeAreaView>
   );
 }
