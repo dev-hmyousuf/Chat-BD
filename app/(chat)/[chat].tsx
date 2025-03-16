@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Stack, useLocalSearchParams } from "expo-router";
+import { Link, Stack, useLocalSearchParams } from "expo-router";
 import {
   ActivityIndicator,
   Image,
@@ -19,7 +19,7 @@ import { useHeaderHeight } from "@react-navigation/elements";
 import { IconSymbol } from "@/components/IconSymbol";
 import { useUser } from "@clerk/clerk-expo";
 import { FlatList } from "react-native";
-import { Secondary, Primary } from "@/colors";
+import { Secondary, Primary, Red } from "@/colors";
 export default function ChatRoomScreen() {
   const { chat: chatRoomId } = useLocalSearchParams();
   const { user } = useUser();
@@ -159,6 +159,11 @@ export default function ChatRoomScreen() {
       <Stack.Screen
         options={{
           headerTitle: chatRoom?.title,
+          headerRight: () => (
+            <Link href="/chat-settings">
+              <IconSymbol name="gearshape" size={24} color={Primary} />
+            </Link>
+          ),
         }}
       />
       <SafeAreaView style={{ flex: 1 }} edges={["bottom"]}>
@@ -216,7 +221,7 @@ export default function ChatRoomScreen() {
                 </View>
               );
             }}
-            keyExtractor={(item) => item.$id!}
+            keyExtractor={(item) => item?.$id ?? "unknown"}
             contentContainerStyle={{ padding: 10 }}
             recycleItems={true}
             initialScrollIndex={messages.length - 1}

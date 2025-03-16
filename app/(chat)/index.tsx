@@ -1,4 +1,4 @@
-import { FlatList, View } from "react-native";
+import { FlatList, RefreshControl, View } from "react-native";
 import { Text } from "@/components/Text";
 import { Link } from "expo-router";
 import { IconSymbol } from "@/components/IconSymbol";
@@ -9,10 +9,22 @@ import { Query } from "react-native-appwrite";
 
 export default function Index() {
   const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   useEffect(() => {
     fetchChatRooms();
   }, []);
+
+  const handleRefresh = async () => {
+    try {
+      setIsRefreshing(true);
+      await fetchChatRooms();
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
 
   const fetchChatRooms = async () => {
     try {
@@ -46,6 +58,9 @@ export default function Index() {
     <FlatList
       data={chatRooms}
       keyExtractor={(item) => item.id}
+      refreshControl={
+        <RefreshControl refreshing={isRefreshing} onRefresh={handleRefresh} />
+      }
       renderItem={({ item }) => {
         return (
           <Link

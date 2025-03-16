@@ -12,7 +12,7 @@ export default function RootChatLayout() {
         name="index"
         options={{
           headerLargeTitle: true,
-          title: "Chat Rooms",
+          title: " Chat Rooms", // left space for android
           headerLeft: () => (
             <Link href="/profile">
               <Image
@@ -41,6 +41,10 @@ export default function RootChatLayout() {
         }}
       />
       <Stack.Screen name="profile" options={{ presentation: "modal" }} />
+      <Stack.Screen
+        name="chat-settings"
+        options={{ presentation: "modal", headerTitle: "Room Settings" }}
+      />
     </Stack>
   );
 }
