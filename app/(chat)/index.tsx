@@ -76,13 +76,6 @@ export default function Index() {
           </Link>
         );
       }}
-      ListHeaderComponent={() => {
-        return (
-          <View style={{ padding: 16, gap: 16 }}>
-            <Button title="Fetch Chat Rooms" onPress={fetchChatRooms} />
-          </View>
-        );
-      }}
       contentInsetAdjustmentBehavior="automatic"
       contentContainerStyle={{
         padding: 16,
