@@ -1,28 +1,4 @@
-export interface ChatRoom {
-  id: string;
-  title: string;
-  description: string;
-  isPrivate: boolean;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface Message {
-  id: string;
-  content: string;
-  senderId: string;
-  senderName: string;
-  senderPhoto: string;
-  createdAt: Date;
-  updatedAt: Date;
-}
-
-interface User {
-  id: string;
-  fullName: string;
-  email: string;
-  imageUrl: string;
-}
+import { ChatRoom } from "./types";
 
 export const chatRooms: ChatRoom[] = [
   {

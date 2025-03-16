@@ -1,10 +1,10 @@
 import { Button, FlatList, View } from "react-native";
 import { Text } from "@/components/Text";
 import { Link, useRouter } from "expo-router";
-import { ChatRoom } from "@/utils/test-data";
 import { IconSymbol } from "@/components/IconSymbol";
 import { database, appwriteConfig } from "@/utils/appwrite";
 import { useState, useEffect } from "react";
+import { ChatRoom } from "@/utils/types";
 
 export default function Index() {
   const router = useRouter();
