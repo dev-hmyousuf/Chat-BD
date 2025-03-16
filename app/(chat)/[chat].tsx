@@ -33,10 +33,21 @@ export default function ChatRoomScreen() {
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const headerHeight = Platform.OS === "ios" ? useHeaderHeight() : 0;
+  const textInputRef = React.useRef<TextInput>(null);
 
   React.useEffect(() => {
     handleFirstLoad();
   }, []);
+
+  // Focus the text input when the component mounts
+  React.useEffect(() => {
+    if (!isLoading) {
+      // Wait until loading is complete before focusing
+      setTimeout(() => {
+        textInputRef.current?.focus();
+      }, 100);
+    }
+  }, [isLoading]);
 
   // Subscribe to messages
   React.useEffect(() => {
@@ -209,7 +220,7 @@ export default function ChatRoomScreen() {
             contentContainerStyle={{ padding: 10 }}
             recycleItems={true}
             initialScrollIndex={messages.length - 1}
-            alignItemsAtEnd // Aligns to the end of the screen, so if there’s only a few items there will be enough padding at the top to make them appear to be at the bottom.
+            alignItemsAtEnd // Aligns to the end of the screen, so if there's only a few items there will be enough padding at the top to make them appear to be at the bottom.
             maintainScrollAtEnd // prop will check if you are already scrolled to the bottom when data changes, and if so it keeps you scrolled to the bottom.
             maintainScrollAtEndThreshold={0.5} // prop will check if you are already scrolled to the bottom when data changes, and if so it keeps you scrolled to the bottom.
             maintainVisibleContentPosition //Automatically adjust item positions when items are added/removed/resized above the viewport so that there is no shift in the visible content.
@@ -230,6 +241,7 @@ export default function ChatRoomScreen() {
             }}
           >
             <TextInput
+              ref={textInputRef}
               placeholder="Type a message"
               style={{
                 minHeight: 40,
