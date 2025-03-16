@@ -1,14 +1,13 @@
-import { Button, FlatList, View } from "react-native";
+import { FlatList, View } from "react-native";
 import { Text } from "@/components/Text";
-import { Link, useRouter } from "expo-router";
+import { Link } from "expo-router";
 import { IconSymbol } from "@/components/IconSymbol";
 import { database, appwriteConfig } from "@/utils/appwrite";
 import { useState, useEffect } from "react";
 import { ChatRoom } from "@/utils/types";
+import { Query } from "react-native-appwrite";
 
 export default function Index() {
-  const router = useRouter();
-
   const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
 
   useEffect(() => {
@@ -19,7 +18,8 @@ export default function Index() {
     try {
       const { documents, total } = await database.listDocuments(
         appwriteConfig.db,
-        appwriteConfig.col.chatRooms
+        appwriteConfig.col.chatRooms,
+        [Query.limit(100)]
       );
 
       console.log("total", total);

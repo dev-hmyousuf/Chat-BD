@@ -6,16 +6,18 @@ interface ChatRoom {
   createdAt: Date;
   updatedAt: Date;
 }
-
 interface Message {
-  id: string;
+  $id?: string;
+  $createdAt?: string;
+  $updatedAt?: string;
+  $collectionId?: string;
+  $databaseId?: string;
+  $permissions?: any[];
   content: string;
   senderId: string;
   senderName: string;
   senderPhoto: string;
   chatRoomId: string;
-  createdAt: Date;
-  updatedAt: Date;
 }
 
 interface User {

@@ -4,11 +4,14 @@ import Input from "@/components/Input";
 import { useState } from "react";
 import { Text } from "@/components/Text";
 import { Stack } from "expo-router";
+import { database } from "@/utils/appwrite";
 
 export default function NewRoom() {
   const [roomName, setRoomName] = useState("");
   const [roomDescription, setRoomDescription] = useState("");
   const [isPrivate, setIsPrivate] = useState(false);
+
+  async function createRoom() {}
 
   return (
     <>
@@ -17,7 +20,7 @@ export default function NewRoom() {
           headerRight: () => (
             <Button
               title="Create"
-              onPress={() => {}}
+              onPress={createRoom}
               disabled={roomName.length === 0}
             />
           ),
