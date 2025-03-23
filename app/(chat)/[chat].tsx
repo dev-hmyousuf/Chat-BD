@@ -160,7 +160,12 @@ export default function ChatRoomScreen() {
         options={{
           headerTitle: chatRoom?.title,
           headerRight: () => (
-            <Link href="/chat-settings">
+            <Link
+              href={{
+                pathname: "/settings/[chat]",
+                params: { chat: chatRoomId as string },
+              }}
+            >
               <IconSymbol name="gearshape" size={24} color={Primary} />
             </Link>
           ),

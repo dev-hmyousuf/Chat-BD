@@ -11,7 +11,6 @@ import { ID } from "react-native-appwrite";
 export default function NewRoom() {
   const [roomName, setRoomName] = useState("");
   const [roomDescription, setRoomDescription] = useState("");
-  const [isPrivate, setIsPrivate] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   async function createRoom() {
     try {
@@ -23,7 +22,6 @@ export default function NewRoom() {
         {
           title: roomName,
           description: roomDescription,
-          isPrivate,
         }
       );
     } catch (error) {
@@ -61,21 +59,6 @@ export default function NewRoom() {
           maxLength={100}
           style={{ height: 100 }}
         />
-        <View
-          style={{
-            flexDirection: "row",
-            gap: 16,
-            alignItems: "center",
-            justifyContent: "space-between",
-            backgroundColor: Secondary,
-            paddingHorizontal: 18,
-            paddingVertical: 12,
-            borderRadius: 16,
-          }}
-        >
-          <Text>Private</Text>
-          <Switch value={isPrivate} onValueChange={setIsPrivate} />
-        </View>
       </View>
     </>
   );
