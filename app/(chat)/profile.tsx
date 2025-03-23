@@ -8,6 +8,7 @@ export default function Profile() {
   const { signOut } = useAuth();
   const { user } = useUser();
   const router = useRouter();
+  const passkeys = user?.passkeys ?? [];
 
   const handleSignOut = async () => {
     await signOut();
@@ -31,10 +32,10 @@ export default function Profile() {
 
       <View style={{ width: "100%", gap: 16, marginTop: 32 }}>
         <Text style={{ fontSize: 24, fontWeight: "bold" }}>Passkeys</Text>
-        {user?.passkeys.length === 0 && (
+        {passkeys.length === 0 && (
           <Text style={{ fontSize: 16, color: "gray" }}>No passkeys found</Text>
         )}
-        {user?.passkeys.map((passkey) => (
+        {passkeys.map((passkey) => (
           <View key={passkey.id}>
             <Text>
               ID: <Text style={{ color: "gray" }}>{passkey.id}</Text>
