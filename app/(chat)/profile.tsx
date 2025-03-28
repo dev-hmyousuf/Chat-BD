@@ -61,20 +61,18 @@ export default function Profile() {
           </View>
         ))}
         {/* Users are allowed to have up to 10 passkeys */}
-        {user?.passkeys.length && user?.passkeys.length < 10 && (
-          <Button
-            onPress={async () => {
-              try {
-                await user?.createPasskey();
-                console.log("Passkey created");
-              } catch (error) {
-                console.error(error);
-              }
-            }}
-          >
-            Add Passkey
-          </Button>
-        )}
+        <Button
+          onPress={async () => {
+            try {
+              await user?.createPasskey();
+              console.log("Passkey created");
+            } catch (error) {
+              console.error(error);
+            }
+          }}
+        >
+          Add Passkey
+        </Button>
       </View>
     </View>
   );
