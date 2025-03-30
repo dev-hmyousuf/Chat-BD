@@ -1,53 +1,90 @@
-# Welcome to your Expo app 👋
+[![Modern Chat App Banner](https://i.ytimg.com/vi/HKJdqJIDtMs/maxresdefault.jpg)](https://codewithbeto.dev/projects/modern-chat-app)
 
-![modern chat app banner](https://github.com/user-attachments/assets/245c595e-881d-4c55-812a-f6a4551a531d)
+# Modern Chat App
 
+A real-time multi-user chat application built with React Native and Expo, featuring seamless authentication, modern UI, and real-time updates. Built with Clerk for Passkeys & Google Sign-In and Appwrite for the backend.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+🔍 Explore more innovative projects and tutorials at [codewithbeto.dev/projects](https://codewithbeto.dev/projects)
 
-## Get started
+## 🚀 Video, Demo & Links
 
-1. Install dependencies
+  <a href="https://youtu.be/HKJdqJIDtMs">
+    <img src="https://i.ytimg.com/vi/HKJdqJIDtMs/maxresdefault.jpg" height="380" alt="YouTube Video Preview">
+  </a>
+
+- 📱 [GitHub Repository](https://github.com/betomoedano/modern-chat-app)
+- 💻 [Project Details](https://codewithbeto.dev/projects/modern-chat-app)
+- 📺 [Video Tutorial](https://youtu.be/HKJdqJIDtMs)
+- 🎨 [Figma Design](https://www.figma.com/community/file/1483864984697101015/chat-room-app)
+
+## ⚡ Tech Stack
+
+- [Expo](https://expo.dev/) - React Native framework
+- [Clerk](https://clerk.dev/) - Authentication & user management
+- [Appwrite](https://appwrite.io/) - Backend & real-time database
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [@legendapp/list](https://www.npmjs.com/package/@legendapp/list) - High-performance list components
+
+## 🛠️ Setup & Installation
+
+### Prerequisites
+
+- [Clerk Account](https://go.clerk.com/Wt70O5j)
+- [Appwrite Account](https://appwrite.io/)
+- Apple Team ID (for passkeys on iOS)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/betomoedano/modern-chat-app.git
+   cd modern-chat-app
+   ```
+
+2. Install dependencies:
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Configure environment variables:
+
+   Create a `.env.local` file in the root directory with:
 
    ```bash
-    npx expo start
+   EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY=your-key-here
+   EXPO_PUBLIC_APPWRITE_APP_ID=your-app-write-app-id
    ```
 
-In the output, you'll find options to open the app in a
+4. Start the development server:
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+   ```bash
+   npx expo start
+   ```
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+   The app can be run on:
 
-## Get a fresh project
+   - iOS simulator
+   - Android emulator
+   - Web browser
+   - Physical devices using Expo Go
 
-When you're ready, run:
+## 📱 Features
 
-```bash
-npm run reset-project
-```
+- 🔐 Secure authentication with Clerk (Passkeys & Google Sign-In)
+- 💬 Real-time chat functionality
+- 🎨 Modern UI
+- 📱 Cross-platform compatibility
+- 🎯 TypeScript for type safety
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🎓 Learning Resources
 
-## Learn more
+Want to learn more about React Native development? Check out:
 
-To learn more about developing your project with Expo, look at the following resources:
+- [React Native Course](https://codewithbeto.dev/learn)
+- [React with TypeScript Course](https://codewithbeto.dev/learnReact)
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📄 License
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+This project is open source and available under the MIT License.
