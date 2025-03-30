@@ -1,5 +1,8 @@
 # Welcome to your Expo app 👋
 
+![modern chat app banner](https://github.com/user-attachments/assets/245c595e-881d-4c55-812a-f6a4551a531d)
+
+
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
