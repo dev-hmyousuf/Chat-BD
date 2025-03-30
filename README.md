@@ -45,7 +45,7 @@ A real-time multi-user chat application built with React Native and Expo, featur
 2. Install dependencies:
 
    ```bash
-   npm install
+   bun install
    ```
 
 3. Configure environment variables:
@@ -57,18 +57,13 @@ A real-time multi-user chat application built with React Native and Expo, featur
    EXPO_PUBLIC_APPWRITE_APP_ID=your-app-write-app-id
    ```
 
-4. Start the development server:
+4. Update the `app.json` with your cleerk front end api
+
+5. Start the development server:
 
    ```bash
    npx expo start
    ```
-
-   The app can be run on:
-
-   - iOS simulator
-   - Android emulator
-   - Web browser
-   - Physical devices using Expo Go
 
 ## 📱 Features
 
