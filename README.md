@@ -1,4 +1,4 @@
-[![Modern Chat App Banner](https://i.ytimg.com/vi/HKJdqJIDtMs/maxresdefault.jpg)](https://codewithbeto.dev/projects/modern-chat-app)
+[![Modern Chat App Banner](https://github.com/user-attachments/assets/245c595e-881d-4c55-812a-f6a4551a531d)](https://codewithbeto.dev/projects/modern-chat-app)
 
 # Modern Chat App
 
