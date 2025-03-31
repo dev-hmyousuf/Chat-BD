@@ -22,7 +22,6 @@ A real-time multi-user chat application built with React Native and Expo, featur
 - [Expo](https://expo.dev/) - React Native framework
 - [Clerk](https://clerk.dev/) - Authentication & user management
 - [Appwrite](https://appwrite.io/) - Backend & real-time database
-- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
 - [@legendapp/list](https://www.npmjs.com/package/@legendapp/list) - High-performance list components
 
 ## 🛠️ Setup & Installation
