@@ -88,6 +88,10 @@ export default function ChatRoomScreen() {
      * Then, we need to cast the document to ChatRoom to get the correct type 🤷‍♂️
      */
     setChatRoom(document as unknown as ChatRoom);
+
+    const deepLink = `my-app://chat/${chatRoomId}`;
+  console.log(
+    `ChatRoom name: | Chat ID: ${chatRoomId} | Deep Link: ${deepLink}`)
   }
 
   // get messages associated with chat id
@@ -207,7 +211,7 @@ export default function ChatRoomScreen() {
                       borderRadius: 10,
                     }}
                   >
-                    <Text style={{ fontWeight: "500", marginBottom: 4 }}>
+                    <Text style={{ fontWeight: "500", marginBottom: 4, borderBottomWidth: 1, borderBottomColor: "#ccc" }}>
                       {item.senderName}
                     </Text>
                     <Text>{item.content}</Text>

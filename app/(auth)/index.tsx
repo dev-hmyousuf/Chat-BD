@@ -49,30 +49,6 @@ export default function Index() {
     }
   }, []);
 
-  const signInWithPasskey = async () => {
-    // 'discoverable' lets the user choose a passkey
-    // without auto-filling any of the options
-    try {
-      const signInAttempt = await signIn?.authenticateWithPasskey({
-        flow: "discoverable",
-      });
-
-      if (signInAttempt?.status === "complete") {
-        if (setActive !== undefined) {
-          await setActive({ session: signInAttempt.createdSessionId });
-        }
-      } else {
-        // If the status is not complete, check why. User may need to
-        // complete further steps.
-        console.error(JSON.stringify(signInAttempt, null, 2));
-      }
-    } catch (err) {
-      // See https://clerk.com/docs/custom-flows/error-handling
-      // for more info on error handling
-      console.error("Error:", JSON.stringify(err, null, 2));
-    }
-  };
-
   return (
     <SafeAreaView style={{ flex: 1 }}>
       {/* spacer */}
@@ -102,23 +78,7 @@ export default function Index() {
 
         {/* spacer */}
         <View style={{ flex: 1 }} />
-        <Button
-          onPress={signInWithPasskey}
-          style={{
-            flexDirection: "row",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 10,
-            marginBottom: 20,
-            backgroundColor: "black",
-            borderColor: "white",
-            borderWidth: 1,
-          }}
-        >
-          <Text style={{ color: "white", fontWeight: "500" }}>
-            Sign in with Passkey
-          </Text>
-        </Button>
+      
         <Button
           onPress={handleSignInWithGoogle}
           style={{

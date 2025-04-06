@@ -1,7 +1,8 @@
-import { Link, Stack } from "expo-router";
+import { Link, Stack, router } from "expo-router";
 import { IconSymbol } from "@/components/IconSymbol";
 import { Image } from "react-native";
 import { useUser } from "@clerk/clerk-expo";
+import { TouchableOpacity } from "react-native";
 
 export default function RootChatLayout() {
   const { user } = useUser();
@@ -22,9 +23,9 @@ export default function RootChatLayout() {
             </Link>
           ),
           headerRight: () => (
-            <Link href="/new-room">
+            <TouchableOpacity onPress={() => router.push("/new-room")} >
               <IconSymbol name="plus" />
-            </Link>
+            </TouchableOpacity>
           ),
         }}
       />

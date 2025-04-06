@@ -1,11 +1,12 @@
-import { FlatList, RefreshControl, View } from "react-native";
+import { FlatList, RefreshControl, View, TouchableOpacity } from "react-native";
 import { Text } from "@/components/Text";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { IconSymbol } from "@/components/IconSymbol";
 import { database, appwriteConfig } from "@/utils/appwrite";
 import { useState, useEffect } from "react";
 import { ChatRoom } from "@/utils/types";
 import { Query } from "react-native-appwrite";
+import { Button } from "@/components/Button"
 
 export default function Index() {
   const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
@@ -55,6 +56,7 @@ export default function Index() {
   };
 
   return (
+     <>
     <FlatList
       data={chatRooms}
       keyExtractor={(item) => item.id}
@@ -81,14 +83,16 @@ export default function Index() {
                 justifyContent: "space-between",
               }}
             >
+              
               <ItemTitleAndDescription
                 title={item.title}
                 description={item.description}
                 isPrivate={item.isPrivate}
               />
-              <IconSymbol name="chevron.right" size={20} color="#666666" />
+              <IconSymbol name="chevron.right" size={20} color="#017bfd" />
             </View>
           </Link>
+         
         );
       }}
       contentInsetAdjustmentBehavior="automatic"
@@ -96,7 +100,7 @@ export default function Index() {
         padding: 16,
         gap: 16,
       }}
-    />
+    /></>
   );
 }
 

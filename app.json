@@ -1,19 +1,19 @@
 {
   "expo": {
-    "name": "modern-chat-app",
-    "slug": "modern-chat-app",
+    "name": "Chat BD",
+    "slug": "chat-bd",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "chatbd",
     "userInterfaceStyle": "dark",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.betoatexpo.modern-chat-app",
+      "bundleIdentifier": "com.hmyousuf.chatbd",
       "associatedDomains": [
-        "applinks:quiet-bulldog-8.clerk.accounts.dev",
-        "webcredentials:quiet-bulldog-8.clerk.accounts.dev"
+        "applinks:https://tidy-rodent-91.clerk.accounts.dev",
+        "webcredentials:https://tidy-rodent-91.clerk.accounts.dev"
       ]
     },
     "android": {
@@ -21,7 +21,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.betoatexpo.modernchatapp"
+      "package": "com.hmyousuf.chatbd"
     },
     "web": {
       "bundler": "metro",
@@ -51,6 +51,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "8e4068d4-308c-4dbe-88ef-2e6c82c1506b"
+      }
+    },
+    "owner": "dev-hmyousuf"
   }
 }
