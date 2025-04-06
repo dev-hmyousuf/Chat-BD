@@ -1,21 +1,16 @@
-[![Modern Chat App Banner](https://github.com/user-attachments/assets/245c595e-881d-4c55-812a-f6a4551a531d)](https://codewithbeto.dev/projects/modern-chat-app)
+
 
 # Modern Chat App
 
 A real-time multi-user chat application built with React Native and Expo, featuring seamless authentication, modern UI, and real-time updates. Built with Clerk for Passkeys & Google Sign-In and Appwrite for the backend.
 
-🔍 Explore more innovative projects and tutorials at [codewithbeto.dev/projects](https://codewithbeto.dev/projects)
+
 
 ## 🚀 Video, Demo & Links
 
-  <a href="https://youtu.be/HKJdqJIDtMs">
-    <img src="https://i.ytimg.com/vi/HKJdqJIDtMs/maxresdefault.jpg" height="380" alt="YouTube Video Preview">
-  </a>
+  
 
-- 📱 [GitHub Repository](https://github.com/betomoedano/modern-chat-app)
-- 💻 [Project Details](https://codewithbeto.dev/projects/modern-chat-app)
-- 📺 [Video Tutorial](https://youtu.be/HKJdqJIDtMs)
-- 🎨 [Figma Design](https://www.figma.com/community/file/1483864984697101015/chat-room-app)
+- 📱 [GitHub Repository](https://github.com/dev-hmyousuf/chat-BD)
 
 ## ⚡ Tech Stack
 
@@ -28,7 +23,7 @@ A real-time multi-user chat application built with React Native and Expo, featur
 
 ### Prerequisites
 
-- [Clerk Account](https://go.clerk.com/Wt70O5j)
+- [Clerk Account](https://clerk.com)
 - [Appwrite Account](https://appwrite.io/)
 - Apple Team ID (for passkeys on iOS)
 
@@ -72,12 +67,7 @@ A real-time multi-user chat application built with React Native and Expo, featur
 - 📱 Cross-platform compatibility
 - 🎯 TypeScript for type safety
 
-## 🎓 Learning Resources
 
-Want to learn more about React Native development? Check out:
-
-- [React Native Course](https://codewithbeto.dev/learn)
-- [React with TypeScript Course](https://codewithbeto.dev/learnReact)
 
 ## 📄 License
 
